@@ -1,0 +1,93 @@
+<html>
+<head>
+
+<title>Loteria</title>  
+
+<style>
+    h1{
+        color: blue;
+      }
+
+      div{
+          width: 25%;
+          margin: 0.4em;
+          background-color: aquamarine;
+          position: absolute
+         }
+
+    button{
+           font-size: 14px;
+           cursor:pointer;
+          }
+
+</style>
+
+</head>
+
+<body>
+ <div>
+ <h1>Sorteo de loteria</h1> 
+ <img src="img/loterias.jpg" alt="loteria">
+ <h5>Digite los 3 números que deseas jugar</h5>
+ <label for="dato1"> Primer número</label>
+ <input id="dato1" type="number"><br> <br>
+ <label for="dato2"> Segundo número </label>
+ <input id="dato2" type="number"> <br> <br>
+ <label for="dato3"> Tercer número</label>
+ <input id="dato3" type="number"><br> <br>
+ <hr>
+ <label> <b>Primera:</b> </label>
+ <label id="primera"></label>
+ <label> <b>Segunda:</b> </label>
+ <label id="segunda"></label>
+ <label> <b>Tercera:</b> </label>
+ <label id="tercera"></label><br> <br>
+ <hr>
+ <label id="mensaje" style="color: blue"></label> <br> <br>
+ <button onclick="getRandomNumber();"> <b> Soltear número </b></button>
+
+ </div>   
+ 
+<script>
+
+
+   // Números aleatorios
+   function getRandomNumber(){
+   var randomNumber = Math.floor(Math.random() * 100);
+   var randomNumber2 = Math.floor(Math.random() * 100);
+   var randomNumber3 = Math.floor(Math.random() * 100);    
+
+
+    var valor1 = document.getElementById('dato1').value;
+    var valor2 = document.getElementById('dato2').value;
+    var valor3 = document.getElementById('dato3').value;
+
+        
+       if(valor1 == randomNumber)mensaje = "==> Gano en primera";
+
+       else
+      
+        
+       if(valor2 == randomNumber)mensaje = "==> Gano en segunda";
+
+       else
+
+        
+       if(valor3 == randomNumber)mensaje = "==> Gano en tercera";
+
+
+
+       else mensaje = "== No fue ganador en ese boleto jugado ==";
+
+
+      document.getElementById('primera').innerHTML= randomNumber;
+      document.getElementById('segunda').innerHTML= randomNumber2; 
+      document.getElementById('tercera').innerHTML= randomNumber3;
+
+      document.getElementById('mensaje').innerHTML= mensaje;
+      
+   }
+
+</script>
+</body>
+</html>
